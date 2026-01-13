@@ -1,6 +1,6 @@
 # DSF Board monthly meeting, {MONTH} {DAY}, 2026
 
-This meeting was led by Jeff Triplett
+This meeting was led by Jeff Triplett.
 
 Board members in attendance:
 - Jeff Triplett
@@ -13,6 +13,9 @@ Board members in attendance:
 
 Also in attendance:
 - Catherine Holmes (Assistant to Treasurer)
+
+Apologies:
+- {NAME}
 
 ## Finance
 
