@@ -9,8 +9,10 @@ layout: null
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <id>{{ site.url }}{{ site.baseurl }}/</id>
   {% assign minutes = site.pages | sort: "name" | reverse %}
+  {% assign count = 0 %}
   {% for page in minutes %}
     {% if page.name != "template.md" and page.name != "index.md" and page.name != "feed.xml" and page.dir contains "20" %}
+      {% if count < 10 %}
   <entry>
     <title>{{ page.name | replace: ".md", "" }}</title>
     <link href="{{ site.url }}{{ site.baseurl }}{{ page.url }}"/>
@@ -18,6 +20,8 @@ layout: null
     <updated>{{ page.name | replace: ".md", "" }}T00:00:00Z</updated>
     <content type="html">{{ page.content | xml_escape }}</content>
   </entry>
+      {% assign count = count | plus: 1 %}
+      {% endif %}
     {% endif %}
   {% endfor %}
 </feed>

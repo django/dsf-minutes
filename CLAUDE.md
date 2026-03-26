@@ -8,7 +8,6 @@ This repository contains the meeting minutes of the Django Software Foundation (
 
 ## Structure
 
-- `template.md` — Base meeting minutes template with placeholder fields (`{MONTH}`, `{NAME}`, etc.)
 - `YYYY/template.md` — Year-specific template pre-filled with that year's board members and attendees
 - `YYYY/YYYY-MM-DD.md` — Individual meeting minutes, named by meeting date
 
@@ -28,4 +27,5 @@ This repository contains the meeting minutes of the Django Software Foundation (
 - Filenames use the meeting date: `YYYY-MM-DD.md`
 - Minutes follow a consistent markdown structure with H1 title, H2 sections (Finance, Grants approved, Individual/Corporate members approved, Ongoing business, New business, Action items), and H3 subsections
 - Confidential discussions are noted with: "Discussions under this section are confidential and have been omitted from the public minutes for this month."
-- The 2026+ template includes an "Apologies" field not present in the base `template.md`
+- The 2026+ template includes an "Apologies" field
+- All minutes files must start with empty YAML front matter (`---\n---`) for Jekyll processing

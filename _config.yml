@@ -9,7 +9,6 @@ exclude:
   - CLAUDE.md
   - LICENSE
   - justfile
-  - template.md
   - "*/template.md"
 
 defaults:
