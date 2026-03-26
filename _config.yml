@@ -1,0 +1,18 @@
+title: DSF Board Meeting Minutes
+description: Meeting minutes of the Django Software Foundation Board
+url: https://django.github.io
+baseurl: /dsf-minutes
+
+exclude:
+  - README.md
+  - CLAUDE.md
+  - LICENSE
+  - justfile
+  - template.md
+  - "*/template.md"
+
+defaults:
+  - scope:
+      path: "20*/*.md"
+    values:
+      layout: page
