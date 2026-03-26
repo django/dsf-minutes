@@ -1,0 +1,23 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title }}</title>
+  <link href="{{ site.url }}{{ site.baseurl }}/feed.xml" rel="self"/>
+  <link href="{{ site.url }}{{ site.baseurl }}/"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.url }}{{ site.baseurl }}/</id>
+  {% assign minutes = site.pages | sort: "name" | reverse %}
+  {% for page in minutes %}
+    {% if page.name != "template.md" and page.name != "index.md" and page.name != "feed.xml" and page.dir contains "20" %}
+  <entry>
+    <title>{{ page.name | replace: ".md", "" }}</title>
+    <link href="{{ site.url }}{{ site.baseurl }}{{ page.url }}"/>
+    <id>{{ site.url }}{{ site.baseurl }}{{ page.url }}</id>
+    <updated>{{ page.name | replace: ".md", "" }}T00:00:00Z</updated>
+    <content type="html">{{ page.content | xml_escape }}</content>
+  </entry>
+    {% endif %}
+  {% endfor %}
+</feed>

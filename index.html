@@ -1,0 +1,39 @@
+---
+layout: default
+title: DSF Board Meeting Minutes
+---
+
+<div class="page-header">
+  <h1>DSF Board Meeting Minutes</h1>
+  <p>Public meeting minutes from the Django Software Foundation Board of Directors.</p>
+</div>
+
+{% assign minutes = site.pages | sort: "name" | reverse %}
+{% assign current_year = "" %}
+
+{% for page in minutes %}
+  {% if page.name != "template.md" and page.name != "index.md" and page.name != "index.html" and page.dir contains "20" %}
+    {% assign year = page.name | slice: 0, 4 %}
+    {% if year != current_year %}
+      {% if current_year != "" %}
+        </ul>
+      </div>
+      {% endif %}
+      <div class="year-group">
+        <div class="year-label">{{ year }}</div>
+        <ul class="minutes-list">
+      {% assign current_year = year %}
+    {% endif %}
+          <li>
+            <a href="{{ site.baseurl }}{{ page.url }}">
+              <span class="minutes-date">{{ page.name | replace: ".md", "" }}</span>
+              <span class="minutes-arrow">&rarr;</span>
+            </a>
+          </li>
+  {% endif %}
+{% endfor %}
+
+{% if current_year != "" %}
+        </ul>
+      </div>
+{% endif %}
