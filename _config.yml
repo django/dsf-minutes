@@ -2,6 +2,7 @@ title: DSF Board Meeting Minutes
 description: Meeting minutes of the Django Software Foundation Board
 url: https://django.github.io
 baseurl: /dsf-minutes
+permalink: pretty
 
 exclude:
   - README.md
